@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var pitchLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!
-    @IBOutlet weak var volumSlider: UISlider!
+    @IBOutlet weak var volumeSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @IBAction func sliderMoved(_ sender: UISlider) {
         rateLabel.text = String(format: "%.1f", rateSlider.value)
         pitchLabel.text = String(format: "%.1f", pitchSlider.value)
-        volumeLabel.text = String(format: "%.1f", volumSlider.value)
+        volumeLabel.text = String(format: "%.1f", volumeSlider.value)
     }
     
     @IBAction func speakFunc(_ sender: Any) {
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         speech.voice = AVSpeechSynthesisVoice(language: "zh-TW")
         speech.rate = rateSlider.value
         speech.pitchMultiplier = pitchSlider.value
-        speech.volume = volumSlider.value
+        speech.volume = volumeSlider.value
         let synzer = AVSpeechSynthesizer()
         synzer.speak(speech)
         

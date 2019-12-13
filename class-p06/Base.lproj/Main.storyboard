@@ -107,8 +107,8 @@
                         <outlet property="rateLabel" destination="jss-8G-XON" id="Oav-Pw-Ojj"/>
                         <outlet property="rateSlider" destination="mrF-az-xhO" id="ieH-e5-ZLg"/>
                         <outlet property="speakText" destination="4SG-LF-0ZU" id="Vvo-NG-KP9"/>
-                        <outlet property="volumSlider" destination="Ode-G8-T3Y" id="0Ri-Ss-b1L"/>
                         <outlet property="volumeLabel" destination="ivB-pm-dbQ" id="xAv-Ar-76i"/>
+                        <outlet property="volumeSlider" destination="Ode-G8-T3Y" id="Yyw-u0-nLJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
