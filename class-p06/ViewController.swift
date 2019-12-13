@@ -7,14 +7,37 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var speakText: UITextField!
+    @IBOutlet weak var rateSlider: UISlider!
+    @IBOutlet weak var pitchSlider: UISlider!
+    @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var pitchLabel: UILabel!
+    @IBOutlet weak var volumeLabel: UILabel!
+    @IBOutlet weak var volumSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func sliderMoved(_ sender: UISlider) {
+        rateLabel.text = String(format: "%.1f", rateSlider.value)
+        pitchLabel.text = String(format: "%.1f", pitchSlider.value)
+        volumeLabel.text = String(format: "%.1f", volumSlider.value)
+    }
+    
+    @IBAction func speakFunc(_ sender: Any) {
+        let speech = AVSpeechUtterance(string: speakText.text!)
+        speech.voice = AVSpeechSynthesisVoice(language: "zh-TW")
+        speech.rate = rateSlider.value
+        speech.pitchMultiplier = pitchSlider.value
+        speech.volume = volumSlider.value
+        let synzer = AVSpeechSynthesizer()
+        synzer.speak(speech)
+        
+    }
 }
 
